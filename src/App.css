@@ -1,4 +1,6 @@
-html, body, #app, #app>div {
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+html, body {
   height: 100%;
   width: 100%;
 }
@@ -7,8 +9,15 @@ body {
   background-image: url(https://i.imgur.com/YPBnXKE.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  font-family: 'Bangers'
 }
 
+.searchbar {
+  margin: 0px 20px;
+}
 center {
   justify-content: center !important;
 }
@@ -22,8 +31,18 @@ center {
   top: 300px;
 }
 
+.input:active, .input:focus {
+  border-color: #d00002 !important;
+}
+
 .marvbtn {
   background-color: #d80103;
   color: white;
   border: none;
+}
+
+.marvbtn:hover, .marvbtn:active {
+  background-color: black;
+  color: #d80103;
+  border: 1px solid white;
 }
