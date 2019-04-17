@@ -20,11 +20,11 @@ class Navbar extends Component {
     
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item">
+          <a class="navbar-item navitem">
             Home
           </a>
     
-          <a class="navbar-item">
+          <a class="navbar-item navitem">
             About
           </a>
         </div>

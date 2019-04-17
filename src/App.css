@@ -15,6 +15,10 @@ body {
   font-family: 'Bangers'
 }
 
+.navitem:hover {
+  background-color: #d00002 !important;
+}
+
 .searchbar {
   margin: 0px 20px;
 }
