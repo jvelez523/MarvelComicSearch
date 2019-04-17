@@ -9,6 +9,8 @@ var marvel = api.createClient({
   privateKey: "12557b50b64ba4c2376112e8be1154d2c7673505"
 });
 
+// var imgSrc = [];
+
 //var character = character => {
 //  marvel.characters
 //    .findNameStartsWith(character)
@@ -26,7 +28,11 @@ var marvel = api.createClient({
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { 
+      value: "",
+      cards: []
+    
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,10 +44,10 @@ class Search extends Component {
 
   handleSubmit(event) {
     //alert('A name was submitted: ' + this.state.value);
-
+    
     marvel.characters
       .findNameStartsWith(this.state.value)
-      .then(function(res) {
+      .then((res) => {
         for (var i=0; i < res.data.length; i++){
           var name = res.data[i].name
           var thumb = res.data[i].thumbnail.path + ".jpg"
@@ -50,7 +56,10 @@ class Search extends Component {
           console.log(name)
           console.log(thumb)
           console.log(bio)
-          this.image.setState = thumb
+          // console.log("----------- ", this.state)
+          this.state.cards.push({name: thumb});
+          // imgSrc.push({name: thumb})
+          // console.log("=========== ", this.state)
         }
         //console.log(res.data);
         //console.log("found character " + res.data[0].name);
@@ -59,31 +68,39 @@ class Search extends Component {
       .fail(console.error)
       .done();
     event.preventDefault();
+    // this.setState({cards: i  mgSrc})
+  }
+
+  showCards = () => {
+    console.log(">>>>>>>>>>>>>> ", this.state)
+    
+    return this.state.cards.map(card=> <Card name={card.name}></Card>) //<Card {name}/>//this.state.cards.map(card=>card.name)
   }
 
   render() {
     return (
-      <section class="searchbar">
-        <div class="columns is-mobile">
-          <div class="column">
-            <form class="field has-addons center" onSubmit={this.handleSubmit}>
-              <div class="control">
+      <section className="searchbar">
+        <div className="columns is-mobile">
+          <div className="column">
+            <form className="field has-addons center" onSubmit={this.handleSubmit}>
+              <div className="control">
                 <input
-                  class="input is-large"
+                  className="input is-large"
                   type="text"
                   placeholder="Search Marvel"
                   value={this.state.value}
                   onChange={this.handleChange}
                 />
               </div>
-              <div class="control">
-                <button type="submit" class="button is-large marvbtn">
+              <div className="control">
+                <button type="submit" className="button is-large marvbtn">
                   Search
                 </button>
               </div>
             </form>
           </div>
         </div>
+        {this.showCards()}
       </section>
     );
   }

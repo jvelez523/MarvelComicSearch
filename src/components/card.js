@@ -7,7 +7,7 @@ const Card = (props) => {
   
   return (
     <column>
-      <div class="charcard"><img src={image} /></div>
+      <div class="charcard">{props.name}</div>
     </column>
   );
   
