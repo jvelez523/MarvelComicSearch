@@ -76,7 +76,7 @@ class Search extends Component {
   showCards = () => {
     console.log(">>>>>>>>>>>>>> ", this.state)
     
-    return this.state.cards.map(card=> <Card bio={card.description} img={card.thumbnail.path + '.' + card.thumbnail.extension}></Card>) //<Card {name}/>//this.state.cards.map(card=>card.name)
+    return this.state.cards.map(card=> <Card bio={card.description} img={card.thumbnail.path + '.' + card.thumbnail.extension} name={card.name}></Card>) //<Card {name}/>//this.state.cards.map(card=>card.name)
   }
 
   render() {

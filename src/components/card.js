@@ -7,19 +7,28 @@ const Card = props => {
   const image = props;
 
   return (
-    <div class="column charhold">
-      <div class="charcard">
-        <CSSTransitionGroup
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}
-        >
-          <img class="charimg" src={props.img} />
-          <p>{props.bio}</p>
-        </CSSTransitionGroup>
+    //<div class="column charhold">
+    //  <div class="charcard">
+    //      <img class="charimg" src={props.img} />
+    //      <p>{props.bio}</p>
+    //  </div>
+    //</div>
+    <div class="card">
+      <div class="card-image">
+          <img class="charimg"  src={props.img} alt="Placeholder image" />
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">{props.name}</p>
+            <div class="content">{props.bio}</div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Card;
+
+
