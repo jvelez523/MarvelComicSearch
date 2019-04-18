@@ -103,7 +103,7 @@ form {
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 800ms ease-in;
 }
 
 .example-leave {
@@ -113,4 +113,12 @@ form {
 .example-leave.example-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}
+
+.charcard p {
+  display: none;
+}
+
+.charcard:hover p {
+  display: block;
 }
