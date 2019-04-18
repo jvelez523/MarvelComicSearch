@@ -76,7 +76,7 @@ form {
 
 .charimg {
   height: 300px;
-  width: 300px;
+  width: 100%;
   border: 1px solid black;
   box-shadow: black 0px 0px 11px 2px;
   transition: all .2s ease-in-out;

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "bulma/css/bulma.css";
 import "../App.css";
 import Card from './card'
+import ReactLoading from 'react-loading';
+
 var api = require("marvel-api");
 
 var marvel = api.createClient({
@@ -75,7 +77,7 @@ class Search extends Component {
 
   showCards = () => {
     console.log(">>>>>>>>>>>>>> ", this.state)
-    
+
     return this.state.cards.map(card=> <Card bio={card.description} img={card.thumbnail.path + '.' + card.thumbnail.extension} name={card.name}></Card>) //<Card {name}/>//this.state.cards.map(card=>card.name)
   }
 
