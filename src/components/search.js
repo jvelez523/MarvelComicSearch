@@ -80,6 +80,7 @@ class Search extends Component {
   render() {
     return (
       <section className="searchbar">
+      <h1>Marvel Character Search</h1>
         <div className="columns is-mobile">
           <div className="column">
             <form className="field has-addons center" onSubmit={this.handleSubmit}>
@@ -100,7 +101,9 @@ class Search extends Component {
             </form>
           </div>
         </div>
+        <div class="columns characters is-mobile">
         {this.showCards()}
+        </div>
       </section>
     );
   }

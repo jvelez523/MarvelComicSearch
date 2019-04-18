@@ -3,6 +3,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  background-color: transparent;
 }
 
 body {
@@ -13,6 +14,19 @@ body {
   background-position: center;
   margin: 0;
   font-family: 'Bangers'
+}
+
+body:before {
+  filter: blur(10px);
+}
+
+h1 {
+  color: white !important;
+  text-align: center;
+  font-size: 4em !important;
+  letter-spacing: 7px;
+  padding-bottom: 50px;
+  text-shadow: black 2px 0px 15px;
 }
 
 .navitem:hover {
@@ -32,7 +46,11 @@ center {
 
 .searchbar {
   position: relative;
-  top: 300px;
+  top: 100px;
+}
+
+.input {
+  box-shadow: black 1px 1px 20px 1px;
 }
 
 .input:active, .input:focus {
@@ -43,10 +61,56 @@ center {
   background-color: #d80103;
   color: white;
   border: none;
+  box-shadow: black 1px 1px 20px 1px;
 }
 
 .marvbtn:hover, .marvbtn:active {
   background-color: black;
   color: #d80103;
   border: 1px solid white;
+}
+
+form {
+  padding-bottom: 100px;
+}
+
+.charimg {
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  box-shadow: black 0px 0px 11px 2px;
+  transition: all .2s ease-in-out;
+}
+
+
+.charimg:hover {
+  transform: scale(1.1);
+}
+
+.characters {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.charhold {
+  flex-basis: auto;
+  flex-grow: 0;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
