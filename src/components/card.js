@@ -13,11 +13,7 @@ const Card = props => {
     //      <p>{props.bio}</p>
     //  </div>
     //</div>
-    <CSSTransitionGroup
-      transitionName="example"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={300}
-    >
+    <a href={props.wiki}>
       <div class="card">
         <div class="card-image">
           <img class="charimg" src={props.img} alt="Placeholder image" />
@@ -31,7 +27,7 @@ const Card = props => {
           </div>
         </div>
       </div>
-    </CSSTransitionGroup>
+      </a>
   );
 };
 

@@ -3,6 +3,15 @@ import "bulma/css/bulma.css";
 import "../App.css";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 
+// Button Click function
+
+var showmenu = () => {
+  var x = document.getElementsByClassName("navbar-menu");
+  x.classList.toggle("is-active");
+}
+
+
+
 class Navbar extends Component {
   render() {
     return (
@@ -26,6 +35,7 @@ class Navbar extends Component {
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
+            onclick=""
           >
             <span aria-hidden="true" />
             <span aria-hidden="true" />
