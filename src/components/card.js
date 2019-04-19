@@ -13,22 +13,26 @@ const Card = props => {
     //      <p>{props.bio}</p>
     //  </div>
     //</div>
-    <div class="card">
-      <div class="card-image">
-          <img class="charimg"  src={props.img} alt="Placeholder image" />
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">{props.name}</p>
-            <div class="content">{props.bio}</div>
+    <CSSTransitionGroup
+      transitionName="example"
+      transitionEnterTimeout={500}
+      transitionLeaveTimeout={300}
+    >
+      <div class="card">
+        <div class="card-image">
+          <img class="charimg" src={props.img} alt="Placeholder image" />
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">{props.name}</p>
+              <div class="content">{props.bio}</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </CSSTransitionGroup>
   );
 };
 
 export default Card;
-
-

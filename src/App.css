@@ -83,7 +83,7 @@ form {
 }
 
 
-.charimg:hover {
+.card:hover {
   transform: scale(1.1);
 }
 
@@ -138,6 +138,8 @@ form {
   width: 300px;
   margin: 40px;
   box-shadow: #000000 1px 1px 7px 0px;
+  transition: all .2s ease-in-out;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .title {
@@ -146,4 +148,14 @@ form {
 
 .media-content {
   text-align: center;
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
